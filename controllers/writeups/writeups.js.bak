@@ -1,0 +1,22 @@
+export default [
+  {
+    _id: "123",
+    date: "",
+    ctf: "test1-ctf",
+    problem: "1",
+    username: "charlie",
+    writeup: "To solve this problem, we could...",
+    liked: true,
+    likes: 1,
+  },
+  {
+    _id: "234",
+    date: "",
+    ctf: "test2-ctf",
+    problem: "3",
+    username: "jack",
+    writeup: "It's easy if you know webdev...",
+    liked: false,
+    likes: 2,
+  },
+];
