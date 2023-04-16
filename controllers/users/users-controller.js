@@ -6,9 +6,9 @@ const findUsers = async (req, res) => {
   res.json(users);
 };
 
-const findUsersById = async (req, res) => {
+const findUserById = async (req, res) => {
   const userId = req.params.uid;
-  const user = await usersDao.findUsersById(userId);
+  const user = await usersDao.findUserById(userId);
   res.json(user);
 };
 
@@ -33,7 +33,7 @@ const updateUser = async (req, res) => {
 
 export default (app) => {
   app.get("/api/users", findUsers);
-  app.get("/api/users/:uid", findUsersById);
+  app.get("/api/users/:uid", findUserById);
   app.post("/api/users", createUser);
   app.delete("/api/users/:uid", deleteUser);
   app.put("/api/users/:uid", updateUser);
