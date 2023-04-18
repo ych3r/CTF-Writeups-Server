@@ -40,7 +40,11 @@ const AuthController = (app) => {
     res.sendStatus(200);
   };
 
-  const update = async (req, res) => {};
+  const update = async (req, res) => {
+    const newProfile = req.body;
+    const status = await usersDao.updateUser({ newProfile });
+    res.json(status);
+  };
 
   app.post("/api/users/register", register);
   app.post("/api/users/login", login);
