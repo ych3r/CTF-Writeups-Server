@@ -8,7 +8,6 @@ const writeupsSchema = mongoose.Schema(
     username: String,
     writeup: String,
     likes: Number,
-    liked: Boolean,
   },
   { collection: "writeups" }
 );

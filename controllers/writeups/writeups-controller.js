@@ -6,11 +6,8 @@ import * as writeupsDao from "./writeups-dao.js";
 const createWriteup = async (req, res) => {
   const newWriteup = req.body;
   //   newWriteup._id = new Date().getTime() + "";
-  newWriteup.date = new Date().toLocaleDateString("en-us", {
-    weekday: "long",
-    year: "numeric",
-    month: "short",
-    day: "numeric",
+  newWriteup.date = new Date().toLocaleString("en-us", {
+    timeZone: "EST",
   });
   newWriteup.liked = false;
   newWriteup.likes = 0;
