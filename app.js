@@ -2,8 +2,9 @@ import express from "express";
 import cors from "cors";
 import session from "express-session";
 import UserController from "./controllers/users/users-controller.js";
-import writeupsController from "./controllers/writeups/writeups-controller.js";
+import WriteupsController from "./controllers/writeups/writeups-controller.js";
 import AuthController from "./controllers/users/auth-controller.js";
+import CTFsController from "./controllers/ctf/ctf-controller.js";
 
 import mongoose from "mongoose";
 mongoose.connect("mongodb://127.0.0.1:27017/ctf-writeups");
@@ -25,7 +26,8 @@ app.use(
   })
 );
 
-writeupsController(app);
+WriteupsController(app);
 UserController(app);
 AuthController(app);
+CTFsController(app);
 app.listen(4000);
