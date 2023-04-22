@@ -21,6 +21,12 @@ const findWriteups = async (req, res) => {
   res.json(writeups);
 };
 
+const findWriteupsByCtfId = async (req, res) => {
+  const writeupCidToFind = req.params.cid;
+  const writeups = await writeupsDao.findWriteupsByCtfId(writeupCidToFind);
+  res.json(writeups);
+};
+
 const updateWriteup = async (req, res) => {
   const writeupIdToUpdate = req.params.wid;
   const updates = req.body;
@@ -42,6 +48,7 @@ const deleteWriteup = async (req, res) => {
 export default (app) => {
   app.post("/api/writeups", createWriteup);
   app.get("/api/writeups", findWriteups);
+  app.get("/api/writeups/:cid", findWriteupsByCtfId);
   app.put("/api/writeups/:wid", updateWriteup);
   app.delete("/api/writeups/:wid", deleteWriteup);
 };

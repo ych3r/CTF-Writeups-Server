@@ -1,6 +1,7 @@
 import writeupsModel from "./writeups-model.js";
 
 export const findWriteups = () => writeupsModel.find();
+export const findWriteupsByCtfId = (cid) => writeupsModel.find({ ctf: cid });
 export const createWriteup = (writeup) => writeupsModel.create(writeup);
 export const deleteWriteup = (wid) => writeupsModel.deleteOne({ _id: wid });
 export const updateWriteup = (wid, writeup) =>
