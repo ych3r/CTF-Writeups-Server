@@ -7,11 +7,10 @@ const findCTFEvent = async (req, res) => {
     {
       headers: {
         "user-agent": "curl/7.87.0",
-        "accept": "*",
+        accept: "*",
       },
     }
   );
-//   console.log(event.data);
   res.json(event.data);
 };
 
